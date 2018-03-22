@@ -3,6 +3,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsCollectionContaining.hasItem;
 import static org.junit.Assert.assertThat;
 
 public class PlayerTest {
@@ -15,7 +16,13 @@ public class PlayerTest {
     }
 
     @Test
-    public void getName() {
+    public void should_give_players_name() {
         assertThat(player.getName(),is("Ashish"));
+    }
+
+    @Test
+    public void should_add_move_to_players_moves() {
+        player.addMove(1);
+        assertThat(player.getMoves(),hasItem(1));
     }
 }
