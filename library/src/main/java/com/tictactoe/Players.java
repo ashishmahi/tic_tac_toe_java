@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class Players {
     private ArrayList<Player> players;
-    private int currenPlayerIndex;
+    private int currentPlayerIndex;
 
     public Players() {
-        this.currenPlayerIndex =0;
+        this.currentPlayerIndex =0;
         this.players = new ArrayList<Player>(2);
     }
 
-    public void add(Player player) {
-        this.players.add(player);
+    public void add(String playerName) {
+        this.players.add(new Player(playerName));
     }
 
     public ArrayList<Player> getPlayers() {
@@ -20,6 +20,10 @@ public class Players {
     }
 
     public Player getCurrentPlayer() {
-        return players.get(currenPlayerIndex);
+        return players.get(currentPlayerIndex);
+    }
+
+    public void changeCurrentPlayerIndex() {
+        currentPlayerIndex  = 1 -  currentPlayerIndex;
     }
 }
