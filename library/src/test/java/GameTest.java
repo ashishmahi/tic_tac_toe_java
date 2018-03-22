@@ -3,9 +3,11 @@ import com.tictactoe.Player;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsCollectionContaining.hasItem;
 import static org.hamcrest.core.IsNot.not;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 public class GameTest {
 
@@ -38,5 +40,10 @@ public class GameTest {
         assertThat(player1.getMoves(),hasItem(3));
         game.updateMove(5);
         assertThat(player1.getMoves(),not(hasItem(5)));
+    }
+
+    @Test
+    public void should_tell_current_player_name() {
+        assertThat(game.getCurrentPlayerName(),is("ashish"));
     }
 }
