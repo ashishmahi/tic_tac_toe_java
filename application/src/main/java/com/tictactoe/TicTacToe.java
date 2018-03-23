@@ -1,3 +1,5 @@
+package com.tictactoe;
+
 import com.tictactoe.Game;
 
 import java.util.Scanner;
@@ -6,9 +8,14 @@ public class TicTacToe {
         Scanner sc = new Scanner(System.in);
         while (game.inPlay()){
             System.out.println(game.getCurrentPlayerName() + " please enter your move:");
-            int move = sc.nextInt();
-            game.updateMove(move);
+            String move = sc.next();
+            if(!validMove(move))continue;
+            game.updateMove(Integer.parseInt(move));
         }
+    }
+
+    private static boolean validMove(String move) {
+        return move.matches("[1-9]");
     }
 
     private static void addPlayers(Game game) {

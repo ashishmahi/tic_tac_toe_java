@@ -22,7 +22,7 @@ dependencies {
 shadowJar {
     manifest {
         attributes(
-                'Main-Class': 'TicTacToe'
+                'Main-Class': 'com.tictactoe.TicTacToe'
         )
     }
 }
