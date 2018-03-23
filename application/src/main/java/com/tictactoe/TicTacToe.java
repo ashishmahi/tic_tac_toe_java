@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class TicTacToe {
     private static void updateMove(Game game) {
         Scanner sc = new Scanner(System.in);
-        for (int i = 0; i < 9; i++) {
+        while (game.inPlay()){
             System.out.println(game.getCurrentPlayerName() + " please enter your move:");
             int move = sc.nextInt();
             game.updateMove(move);

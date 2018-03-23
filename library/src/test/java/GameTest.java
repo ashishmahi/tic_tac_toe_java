@@ -3,9 +3,12 @@ import com.tictactoe.Player;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsCollectionContaining.hasItem;
 import static org.hamcrest.core.IsNot.not;
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
@@ -14,7 +17,7 @@ public class GameTest {
     private Game game;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         game = new Game();
         game.addPlayer("ashish");
         game.addPlayer("debu");
@@ -45,5 +48,19 @@ public class GameTest {
     @Test
     public void should_tell_current_player_name() {
         assertThat(game.getCurrentPlayerName(),is("ashish"));
+    }
+
+    @Test
+    public void should_tell_whether_the_game_is_in_play() {
+        assertTrue(game.inPlay());
+    }
+
+    @Test
+    public void should_not_update_move_already_made() {
+        game.updateMove(2);
+        game.updateMove(2);
+        ArrayList<Integer> expected = new ArrayList<>();
+        expected.add(2);
+        assertTrue(game.getMoves().equals(expected));
     }
 }
