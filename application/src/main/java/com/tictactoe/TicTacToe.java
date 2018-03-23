@@ -1,7 +1,6 @@
-package com.tictactoe;
+import com.tictactoe.Game;
 
 import java.util.Scanner;
-
 public class TicTacToe {
     private static void updateMove(Game game) {
         Scanner sc = new Scanner(System.in);
@@ -26,5 +25,4 @@ public class TicTacToe {
         addPlayers(game);
         updateMove(game);
     }
-
 }
