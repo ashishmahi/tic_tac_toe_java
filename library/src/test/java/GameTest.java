@@ -63,4 +63,14 @@ public class GameTest {
         expected.add(2);
         assertTrue(game.getMoves().equals(expected));
     }
+
+    @Test
+    public void should_tell_whether_current_player_has_won_the_game() {
+        game.updateMove(1);
+        game.updateMove(9);
+        game.updateMove(2);
+        game.updateMove(8);
+        game.updateMove(3);
+        assertTrue(game.hasCurrentPlayerWon());
+    }
 }
