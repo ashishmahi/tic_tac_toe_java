@@ -8,9 +8,7 @@ import java.util.ArrayList;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsCollectionContaining.hasItem;
 import static org.hamcrest.core.IsNot.not;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class GameTest {
 
@@ -72,5 +70,13 @@ public class GameTest {
         game.updateMove(8);
         game.updateMove(3);
         assertTrue(game.hasCurrentPlayerWon());
+    }
+
+    @Test
+    public void should_tell_game_in_play_if_current_player_not_won() {
+        game.updateMove(1);
+        game.updateMove(2);
+        game.updateMove(3);
+        assertFalse(game.hasCurrentPlayerWon());
     }
 }
