@@ -1,6 +1,8 @@
 package com.tictactoe;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class TTTUsingAwt {
     private Game game;
@@ -26,6 +28,11 @@ public class TTTUsingAwt {
                 b.setBounds(xPos,yPos,50,50);
                 f.add(b);
                 xPos+=50;
+                b.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent e){
+                        b.setLabel("X");
+                    }
+                });
             }
             yPos+=50;
         }
