@@ -13,8 +13,8 @@ public class PlayerTest {
     private Player player;
 
     @Before
-    public void setUp() throws Exception {
-        player = new Player("Ashish");
+    public void setUp() {
+        player = new Player("Ashish","X");
     }
 
     @Test

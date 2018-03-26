@@ -11,8 +11,8 @@ public class Players {
         this.players = new ArrayList<Player>(2);
     }
 
-    public void add(String playerName) {
-        this.players.add(new Player(playerName));
+    public void add(String playerName, String symbol) {
+        this.players.add(new Player(playerName,symbol));
     }
 
     public ArrayList<Player> getPlayers() {

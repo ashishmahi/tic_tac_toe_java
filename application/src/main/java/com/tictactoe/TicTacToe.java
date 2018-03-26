@@ -1,7 +1,5 @@
 package com.tictactoe;
 
-import com.tictactoe.Game;
-
 import java.util.Scanner;
 public class TicTacToe {
     private static void updateMove(Game game) {
@@ -23,7 +21,7 @@ public class TicTacToe {
         for (int i = 1; i < 3; i++) {
             System.out.println("player "+ i +" enter your name:");
             String name = sc.nextLine();
-            game.addPlayer(name);
+            game.addPlayer(name, "O");
         }
     }
 

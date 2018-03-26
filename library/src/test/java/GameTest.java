@@ -17,8 +17,8 @@ public class GameTest {
     @Before
     public void setUp() {
         game = new Game();
-        game.addPlayer("ashish");
-        game.addPlayer("debu");
+        game.addPlayer("ashish","X");
+        game.addPlayer("debu","O");
     }
 
     @Test

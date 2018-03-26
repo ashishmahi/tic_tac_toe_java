@@ -10,13 +10,13 @@ import static org.junit.Assert.assertThat;
 public class PlayersTest {
 
     Players players = new Players();
-    Player player1 = new Player("ashish");
-    Player player2 = new Player("debu");
+    Player player1 = new Player("ashish","X");
+    Player player2 = new Player("debu","O");
 
     @Before
-    public void setUp() throws Exception {
-        players.add("ashish");
-        players.add("debu");
+    public void setUp() {
+        players.add("ashish", "X");
+        players.add("debu", "O");
     }
 
     @Test
@@ -32,6 +32,6 @@ public class PlayersTest {
     @Test
     public void should_change_current_player_index() {
         players.changeCurrentPlayerIndex();
-        assertThat(players.getCurrentPlayer(),is(new Player("debu")));
+        assertThat(players.getCurrentPlayer(),is(new Player("debu","O")));
     }
 }

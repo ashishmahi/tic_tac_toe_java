@@ -1,5 +1,4 @@
 package com.tictactoe;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -28,8 +27,9 @@ public class Game {
 
     }
 
-    public void addPlayer(String playerName) {
-        players.add(playerName);
+    public void addPlayer(String playerName, String symbol) {
+
+        players.add(playerName,symbol);
     }
 
     public void updateMove(int move) {
@@ -83,4 +83,8 @@ public class Game {
     private boolean isSubset(ArrayList<Integer> moves,int[] winset) {
         return moves.containsAll(Arrays.asList(winset[0],winset[1],winset[2]));
         }
+
+    public String getSymbol() {
+        return this.players.getCurrentPlayer().getSymbol();
     }
+}

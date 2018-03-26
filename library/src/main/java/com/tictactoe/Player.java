@@ -6,13 +6,15 @@ import java.util.Objects;
 public class Player {
     private final String name;
     protected ArrayList<Integer> moves;
+    private String symbol;
 
     public String getName() {
         return name;
     }
 
-    public Player(String name) {
+    public Player(String name,String symbol) {
         this.name = name;
+        this.symbol = symbol;
         this.moves = new ArrayList<Integer>();
 
     }
@@ -38,5 +40,9 @@ public class Player {
     public int hashCode() {
 
         return Objects.hash(name, moves);
+    }
+
+    public String getSymbol() {
+        return symbol;
     }
 }
