@@ -8,6 +8,8 @@ public class Game {
     private ArrayList<Integer> moves_made;
     private boolean inPlay = true;
     ArrayList<int[]> winsets;
+    private String winner;
+
     public Game() {
         this.players = new Players();
         this.moves_made = new ArrayList<>(9);
@@ -38,6 +40,7 @@ public class Game {
         currentPlayer.addMove(move);
         this.moves_made.add(move);
         if(this.hasCurrentPlayerWon()){
+            this.winner = this.getCurrentPlayerName();
             System.out.println(this.getCurrentPlayerName() +" won the game!!");
             this.inPlay = false;
         }
@@ -86,5 +89,9 @@ public class Game {
 
     public String getSymbol() {
         return this.players.getCurrentPlayer().getSymbol();
+    }
+
+    public String getWinner() {
+        return winner;
     }
 }
