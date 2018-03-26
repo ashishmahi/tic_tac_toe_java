@@ -36,12 +36,11 @@ public class Game {
 
     public void updateMove(int move) {
         currentPlayer = this.players.getCurrentPlayer();
-        if(!this.isValidMove(move)) return;
+        if(!this.isValidMove(move) || !this.inPlay()) return;
         currentPlayer.addMove(move);
         this.moves_made.add(move);
         if(this.hasCurrentPlayerWon()){
             this.winner = this.getCurrentPlayerName();
-            System.out.println(this.getCurrentPlayerName() +" won the game!!");
             this.inPlay = false;
         }
         this.players.changeCurrentPlayerIndex();

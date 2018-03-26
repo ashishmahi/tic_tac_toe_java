@@ -29,6 +29,11 @@ public class GameTest {
     }
 
     @Test
+    public void should_give_symbol_of_current_player() {
+        assertThat(game.getSymbol(),is("X"));
+    }
+
+    @Test
     public void should_update_move_in_game() {
         game.updateMove(5);
         assertThat(game.getMoves(),hasItem(5));
@@ -70,6 +75,7 @@ public class GameTest {
         game.updateMove(8);
         game.updateMove(3);
         assertTrue(game.hasCurrentPlayerWon());
+        assertThat("ashish",is(game.getWinner()));
     }
 
     @Test

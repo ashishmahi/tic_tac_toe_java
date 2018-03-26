@@ -37,7 +37,7 @@ public class TTTUsingSwing {
     private void createButton(Frame f,int id, ActionListener[] l) {
         int yPos = 50;
         JLabel lable=new JLabel();
-        lable.setBounds(30,20, 200,30);
+        lable.setBounds(100,20, 200,30);
         f.add(lable);
         for (int i = 0; i < 3; i++) {
             int xPos = 50;

@@ -10,6 +10,7 @@ public class TicTacToe {
             if(!validMove(move))continue;
             game.updateMove(Integer.parseInt(move));
         }
+        System.out.println(game.getWinner() + "won the game");
     }
 
     private static boolean validMove(String move) {
