@@ -56,8 +56,8 @@ public class TTTUsingSwing {
 
     private void addListenerOnButton(ActionListener[] l, JButton b, int cId,JLabel lable) {
         l[cId] = (ActionEvent e) -> {
-            b.setText(game.getSymbol());
             game.updateMove(cId+1);
+            b.setText(game.getSymbol());
             if(!game.inPlay()){
                 lable.setText(game.getWinner() + " won the game!");
             }
