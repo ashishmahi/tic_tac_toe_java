@@ -46,7 +46,6 @@ public class Game {
             this.inPlay = false;
         }
         this.players.changeCurrentPlayerIndex();
-        System.out.println("your moves are " + currentPlayer.getMoves());
     }
 
     private boolean isValidMove(int move) {
@@ -75,14 +74,12 @@ public class Game {
     }
 
     private boolean hasPlayerWon(ArrayList<Integer> moves) {
-        boolean flag = false;
         for (int[] winset:this.winsets) {
             if(this.isSubset(moves,winset)){
-                flag = true;
-                break;
+                return true;
             }
         }
-        return flag;
+        return false;
     }
     private boolean isSubset(ArrayList<Integer> moves,int[] winset) {
         return moves.containsAll(Arrays.asList(winset[0],winset[1],winset[2]));
