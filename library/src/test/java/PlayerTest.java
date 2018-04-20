@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsCollectionContaining.hasItem;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 
 public class PlayerTest {
@@ -34,5 +35,10 @@ public class PlayerTest {
         expectedMoves.add(5);
         player.addMove(5);
         assertThat(player.getMoves(),is(expectedMoves));
+    }
+
+    @Test
+    public void dummyTest() {
+        assertFalse(false);
     }
 }
