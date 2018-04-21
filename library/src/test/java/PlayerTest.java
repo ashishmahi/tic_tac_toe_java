@@ -8,6 +8,7 @@ import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsCollectionContaining.hasItem;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 public class PlayerTest {
 
@@ -40,5 +41,6 @@ public class PlayerTest {
     @Test
     public void dummyTest() {
         assertFalse(false);
+        assertTrue(true);
     }
 }
